@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form class="registration-form" action="./success.html" method="get">
+            <h1>Create Account</h1>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="male">Male</label>
+                <input type="radio" name="genero" id="male" value="male" required>
+                <label for="female">Female</label>
+                <input type="radio" name="genero" id="female" value="female" required>
+                <label for="no">Prefer not to say</label>
+                <input type="radio" name="genero" id="no" value="no" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8" 
+                oninput="this.setCustomValidity(this.value !== document.getElementById('password').value ? 'Passwords do not match' : '')">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" required>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Date of Birth</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select a country</option>
+                    <option value="ec">Ecuador</option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="au">Australia</option>
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                    <option value="es">Spain</option>
+                    <option value="mx">Mexico</option>
+                    <option value="jp">Japan</option>
+                    <option value="cn">China</option>
+                    <option value="in">India</option>
+                    <option value="br">Brazil</option>
+                    <option value="za">South Africa</option>
+                </select>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms and Conditions</label>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to newsletter</label>
+            </div>
+            <button type="submit" class="btn-submit">Register</button>
+            <button type="reset" class="btn-reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
